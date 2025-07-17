@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ServerResponse from "../../types/serverResponse";
+import ServerResponse from "../../../types/serverResponse";
 
 function FormContactUs(): React.ReactElement {
   const [errors, setErrors] = useState<Array<Record<string, string | number>>>([]);
