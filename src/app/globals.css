@@ -14,8 +14,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --background: #0a0a0a;
+    --foreground: #ededed; */
+    --background: #ededed;
+    --foreground: #0a0a0a;
   }
 }
 
@@ -23,4 +25,31 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  h1 {
+    @apply text-[2.1rem] font-[600];
+  }
+  h2 {
+    @apply text-[1.85rem] font-[580];
+  }
+  h3 {
+    @apply text-[1.50rem] font-[560];
+  }
+  h4 {
+    @apply text-[1.45rem] font-[540];
+  }
+  h5 {
+    @apply text-[1.35rem] font-[520];
+  }
+  h6 {
+    @apply text-[1.25rem] font-[500];
+  }
+  input, textarea {
+    @apply border-solid border border-slate-600 rounded-xs;
+  }
+  button {
+    @apply text-white;
+  }
 }

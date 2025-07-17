@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "nodenext",
+    "outDir": "dist",
+    "rootDirs": ["src", "../types"],
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext",
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  },
+}

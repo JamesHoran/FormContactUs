@@ -1,0 +1,265 @@
+/* 1-A. Use a more intuitive box model everywhere */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 1-B. Remove default margin on common block-level elements       */
+/*     Keeps spacing predictable; you’ll add your own scale later */
+body,
+h1, h2, h3, h4, h5, h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* 1-C. Set sensible default line-height & text rendering */
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%; /* iOS text scaling */
+  scroll-behavior: smooth;
+}
+
+/* 1-D. Media elements always behave as block & never overflow */
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* 1-E. Inherit fonts for form controls (Chrome/Safari reset) */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 1-F. Make sure textareas wrap and can be resized vertically */
+textarea {
+  white-space: pre-wrap;
+  resize: vertical;
+}
+
+:root {
+  /* 2-A. Color palette — tweak once, use everywhere */
+  --color-bg: #ffffff;
+  --color-fg: #111111;
+  --color-primary: #2563eb;   /* blue-600 */
+  --color-primary-hover: #1d4ed8;
+  --color-accent: #d97706;    /* amber-600 */
+  --color-danger: #dc2626;    /* red-600 */
+
+  /* 2-B. Typography scale (REM-based, easy to override) */
+  --font-base:   1rem;   /* 16px */
+  --font-sm:     0.875rem;
+  --font-lg:     1.125rem;
+  --font-xl:     1.375rem;
+  --font-2xl:    1.75rem;
+
+  /* 2-C. Spacing scale — multiples of 0.25rem (4 px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  /* 2-D. Border radius */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+  font-size: var(--font-base);
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+  min-height: 100vh;          /* allow sticky footer trick */
+  text-rendering: optimizeLegibility;
+}
+
+/* Simple headings — adjust weight, keep margin-bottom uniform */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--font-2xl); }
+h2 { font-size: var(--font-xl); }
+h3 { font-size: var(--font-lg); }
+
+p,
+ul,
+ol {
+  margin-bottom: var(--space-4);
+}
+
+/* Utility: visually hidden but still accessible */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background-color: white;
+  border: 1px solid #ccc;         /* Matches most browser defaults */
+  border-radius: 4px;             /* Optional: nice subtle rounding */
+  padding: 0.375rem 0.5rem;       /* Slightly smaller than 0.5rem; matches native feel */
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #2563eb;     /* Accessible blue focus ring */
+  outline-offset: 2px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background-color: buttonface;   /* Lets OS/browser pick default */
+  border: 1px solid #ccc;         /* Browser-style gray border */
+  border-radius: 4px;
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --background: #0a0a0a;
+    --foreground: #ededed; */
+    --background: #ededed;
+    --foreground: #0a0a0a;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  h1 {
+    @apply text-[2.1rem] font-[600];
+  }
+  h2 {
+    @apply text-[1.85rem] font-[580];
+  }
+  h3 {
+    @apply text-[1.50rem] font-[560];
+  }
+  h4 {
+    @apply text-[1.45rem] font-[540];
+  }
+  h5 {
+    @apply text-[1.35rem] font-[520];
+  }
+  h6 {
+    @apply text-[1.25rem] font-[500];
+  }
+  input, textarea {
+    @apply border-solid border-[.065rem] rounded-xs
+  }
+}
