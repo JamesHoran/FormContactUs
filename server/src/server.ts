@@ -4,20 +4,13 @@ import cors from "cors";
 import multer from "multer";
 import mongoose from "mongoose";
 import ServerResponse from "../../types/serverResponse.ts"
+import contactEntrySchema from "../models/models.ts"
 var app = express()
 const port = 8082;
 const upload = multer();
 app.use(express.json())
 app.use(cors());
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASS}@crudtdlcluster.${process.env.CLUSTER}.mongodb.net/?retryWrites=true&w=majority&appName=CrudTDLCluster`;
-
-const contactEntrySchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
-  email: String,
-  message: String,
-  createdAt: Date
-})
 
 const ContactEntryModel = mongoose.model("ContactEntryModel", contactEntrySchema);
 let databaseIsConnected: boolean;
