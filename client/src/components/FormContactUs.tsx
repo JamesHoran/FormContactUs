@@ -51,7 +51,7 @@ function FormContactUs(): React.ReactElement {
         let response
         try {
           response = await fetch(
-            "http://localhost:8082/api/form-contact-us",
+            "http://localhost:8080/api/form-contact-us",
             {
               method: "POST",
               body: formData,
