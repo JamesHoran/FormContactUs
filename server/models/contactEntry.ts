@@ -8,4 +8,6 @@ const contactEntrySchema = new mongoose.Schema({
   createdAt: Date
 })
 
-export default contactEntrySchema
+const ContactEntryModel = mongoose.model("ContactEntryModel", contactEntrySchema);
+
+export default ContactEntryModel
